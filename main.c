@@ -11,6 +11,7 @@
 #include "usb.h"
 #include "usb_device.h"
 #include "usb_device_cdc.h"
+#include "serial.h"
 
 MAIN_RETURN main(void) {
     SYSTEM_Initialize(SYSTEM_STATE_USB_START);
@@ -21,6 +22,7 @@ MAIN_RETURN main(void) {
 #if defined(USB_POLLING)
         USBDeviceTasks();
 #endif
-        APP_DeviceCDCBasicDemoTasks();
+        //APP_DeviceCDCBasicDemoTasks();
+        serial_update();
     }
 }
