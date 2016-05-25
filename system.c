@@ -19,6 +19,7 @@ please contact mla_licensing@microchip.com
 
 #include "system.h"
 #include "usb.h"
+#include "pic16f145x_usb.h"
 
 /** CONFIGURATION Bits **********************************************/
 // PIC16F1459 configuration bit settings:
@@ -106,6 +107,9 @@ void SYSTEM_Initialize( SYSTEM_STATE state )
 			
 void interrupt SYS_InterruptHigh(void)
 {
+    if (timer_update()) {
+        return;
+    }
     #if defined(USB_INTERRUPT)
         USBDeviceTasks();
     #endif

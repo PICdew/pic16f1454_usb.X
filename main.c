@@ -11,9 +11,13 @@
 #include "usb.h"
 #include "usb_device.h"
 #include "usb_device_cdc.h"
+#include "pic16f145x_usb.h"
+#include "gpio.h"
 #include "serial.h"
 
 MAIN_RETURN main(void) {
+    gpio_init();
+    timer_init();
     SYSTEM_Initialize(SYSTEM_STATE_USB_START);
     USBDeviceInit();
     USBDeviceAttach();

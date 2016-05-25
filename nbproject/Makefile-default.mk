@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=buttons.c leds.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device_cdc.c main.c system.c app_device_cdc_basic.c app_led_usb_status.c usb_events.c usb_descriptors.c serial.c
+SOURCEFILES_QUOTED_IF_SPACED=buttons.c leds.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device_cdc.c main.c system.c app_device_cdc_basic.c app_led_usb_status.c usb_events.c usb_descriptors.c serial.c pic16f145x_usb.c gpio.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/leds.p1 ${OBJECTDIR}/_ext/786922599/usb_device.p1 ${OBJECTDIR}/_ext/786922599/usb_device_cdc.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/app_device_cdc_basic.p1 ${OBJECTDIR}/app_led_usb_status.p1 ${OBJECTDIR}/usb_events.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/serial.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/buttons.p1.d ${OBJECTDIR}/leds.p1.d ${OBJECTDIR}/_ext/786922599/usb_device.p1.d ${OBJECTDIR}/_ext/786922599/usb_device_cdc.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/system.p1.d ${OBJECTDIR}/app_device_cdc_basic.p1.d ${OBJECTDIR}/app_led_usb_status.p1.d ${OBJECTDIR}/usb_events.p1.d ${OBJECTDIR}/usb_descriptors.p1.d ${OBJECTDIR}/serial.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/leds.p1 ${OBJECTDIR}/_ext/786922599/usb_device.p1 ${OBJECTDIR}/_ext/786922599/usb_device_cdc.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/app_device_cdc_basic.p1 ${OBJECTDIR}/app_led_usb_status.p1 ${OBJECTDIR}/usb_events.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/serial.p1 ${OBJECTDIR}/pic16f145x_usb.p1 ${OBJECTDIR}/gpio.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/buttons.p1.d ${OBJECTDIR}/leds.p1.d ${OBJECTDIR}/_ext/786922599/usb_device.p1.d ${OBJECTDIR}/_ext/786922599/usb_device_cdc.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/system.p1.d ${OBJECTDIR}/app_device_cdc_basic.p1.d ${OBJECTDIR}/app_led_usb_status.p1.d ${OBJECTDIR}/usb_events.p1.d ${OBJECTDIR}/usb_descriptors.p1.d ${OBJECTDIR}/serial.p1.d ${OBJECTDIR}/pic16f145x_usb.p1.d ${OBJECTDIR}/gpio.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/leds.p1 ${OBJECTDIR}/_ext/786922599/usb_device.p1 ${OBJECTDIR}/_ext/786922599/usb_device_cdc.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/app_device_cdc_basic.p1 ${OBJECTDIR}/app_led_usb_status.p1 ${OBJECTDIR}/usb_events.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/serial.p1
+OBJECTFILES=${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/leds.p1 ${OBJECTDIR}/_ext/786922599/usb_device.p1 ${OBJECTDIR}/_ext/786922599/usb_device_cdc.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/app_device_cdc_basic.p1 ${OBJECTDIR}/app_led_usb_status.p1 ${OBJECTDIR}/usb_events.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/serial.p1 ${OBJECTDIR}/pic16f145x_usb.p1 ${OBJECTDIR}/gpio.p1
 
 # Source Files
-SOURCEFILES=buttons.c leds.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device_cdc.c main.c system.c app_device_cdc_basic.c app_led_usb_status.c usb_events.c usb_descriptors.c serial.c
+SOURCEFILES=buttons.c leds.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device.c ../../microchip/mla/v2016_04_27/framework/usb/src/usb_device_cdc.c main.c system.c app_device_cdc_basic.c app_led_usb_status.c usb_events.c usb_descriptors.c serial.c pic16f145x_usb.c gpio.c
 
 
 CFLAGS=
@@ -169,6 +169,22 @@ ${OBJECTDIR}/serial.p1: serial.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/serial.d ${OBJECTDIR}/serial.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/serial.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/pic16f145x_usb.p1: pic16f145x_usb.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pic16f145x_usb.p1.d 
+	@${RM} ${OBJECTDIR}/pic16f145x_usb.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"." -I"../../microchip/mla/v2016_04_27/framework/usb/inc" -I"../../microchip/mla/v2016_04_27/framework/usb/src" --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/pic16f145x_usb.p1  pic16f145x_usb.c 
+	@-${MV} ${OBJECTDIR}/pic16f145x_usb.d ${OBJECTDIR}/pic16f145x_usb.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/pic16f145x_usb.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/gpio.p1: gpio.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/gpio.p1.d 
+	@${RM} ${OBJECTDIR}/gpio.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"." -I"../../microchip/mla/v2016_04_27/framework/usb/inc" -I"../../microchip/mla/v2016_04_27/framework/usb/src" --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/gpio.p1  gpio.c 
+	@-${MV} ${OBJECTDIR}/gpio.d ${OBJECTDIR}/gpio.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/gpio.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -257,6 +273,22 @@ ${OBJECTDIR}/serial.p1: serial.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"." -I"../../microchip/mla/v2016_04_27/framework/usb/inc" -I"../../microchip/mla/v2016_04_27/framework/usb/src" --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/serial.p1  serial.c 
 	@-${MV} ${OBJECTDIR}/serial.d ${OBJECTDIR}/serial.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/serial.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/pic16f145x_usb.p1: pic16f145x_usb.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pic16f145x_usb.p1.d 
+	@${RM} ${OBJECTDIR}/pic16f145x_usb.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"." -I"../../microchip/mla/v2016_04_27/framework/usb/inc" -I"../../microchip/mla/v2016_04_27/framework/usb/src" --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/pic16f145x_usb.p1  pic16f145x_usb.c 
+	@-${MV} ${OBJECTDIR}/pic16f145x_usb.d ${OBJECTDIR}/pic16f145x_usb.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/pic16f145x_usb.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/gpio.p1: gpio.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/gpio.p1.d 
+	@${RM} ${OBJECTDIR}/gpio.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 -I"." -I"../../microchip/mla/v2016_04_27/framework/usb/inc" -I"../../microchip/mla/v2016_04_27/framework/usb/src" --warn=-3 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/gpio.p1  gpio.c 
+	@-${MV} ${OBJECTDIR}/gpio.d ${OBJECTDIR}/gpio.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/gpio.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include "system.h"
-#include "serial.h"
 #include "usb.h"
 #include "usb_device_cdc.h"
+#include "gpio.h"
+#include "serial.h"
 
 static uint8_t readBuffer[CDC_DATA_OUT_EP_SIZE];
 static uint8_t writeBuffer[CDC_DATA_IN_EP_SIZE];
-char g_cDevice = 'l';
-char g_cDivider = 9;
 
 void serial_update() {
     if (USBGetDeviceState() < CONFIGURED_STATE) {
@@ -39,5 +38,6 @@ void serial_update() {
             }
         }
     }
+    gpio_update();
     CDCTxService();
 }
