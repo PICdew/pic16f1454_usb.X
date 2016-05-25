@@ -1,2 +1,4 @@
 nbproject/Makefile-genesis.properties
-/dist/default/
+nbproject/private/private.xml
+build/
+dist/
